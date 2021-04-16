@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+  <style type="text/css"></style>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1><strong>Mission to Mars</strong></h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><strong>Latest Mars News</strong></h2>
+        <h3><strong> {{mdata.news_title}} </strong> </h3>
+        <h6>{{mdata.news_date}}</h6>
+        <h4> {{mdata.news_p}} </h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <h2><strong>Featured Mars Image </strong></h2>
+        <img src = "{{ mdata.featured_img_url }}" alt="Featured Mars Image" width: 20%>
+      </div>
+
+      <div class="col-md-4">
+        <h3><strong>Mars Facts</strong></h3>
+        {{ mdata.html_table | safe }}
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h2 style="text-align: center;"><strong>Mars Hemisphere</strong></h2>
+          <hr class="my-4">
+        </div>
+    </div>
+    </div>
+
+  <div class="container">  
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="card" style="float:left">
+          <img class="card-img-top" img src = "{{ mdata.h_image[0].img_url }}" alt="Featured Mars Hemisphere" width= "400" height="400">
+          <div class="card-body">
+            <h3 class="card-title"> <strong>{{mdata.h_title[0].title}} </strong></h3>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="col-sm-12 col-md-6">
+        <div class="card" style="float:right">
+          <img class="card-img-top" img src = "{{ mdata.h_image[1].img_url }}" alt="Featured Mars Hemisphere" width= "400" height="400">
+          <div class="card-body">
+            <h3 class="card-title"> <strong>{{mdata.h_title[1].title}} </strong></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="card" style="float:left">
+          <img class="card-img-top" img src = "{{ mdata.h_image[2].img_url }}" alt="Featured Mars Hemisphere" width= "400" height="400">
+          <div class="card-body">
+            <h3 class="card-title"> <strong>{{mdata.h_title[2].title}} </strong></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="card" style="float:right">
+          <img class="card-img-top" img src = "{{ mdata.h_image[3].img_url }}" alt="Featured Mars Hemisphere" width= "400" height="400">
+          <div class="card-body">
+            <h3 class="card-title"><strong> {{mdata.h_title[3].title}} </strong></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
